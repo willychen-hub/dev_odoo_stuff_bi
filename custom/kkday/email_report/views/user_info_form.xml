@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+
+        <!-- bug list view -->
+        <record model="ir.ui.view" id="email_report.user_information_setting">
+            <field name="name">User Info list</field>
+            <field name="model">bi.email.report.user.info.setting</field>
+            <field name="arch" type="xml">
+              <form import="false">
+                <sheet>
+                    <group name="group_top" col="2">
+                        <group name="group_left">
+                            <field name="name" />
+                        </group>
+                    </group>
+                </sheet>
+              </form>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

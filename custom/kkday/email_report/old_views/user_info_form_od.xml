@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <!-- bug form view -->
+        <record model="ir.ui.view" id="email_report.user_info_form">
+            <field name="name">User Form</field>
+            <field name="model">er.show_user_setting</field>
+            <field name="arch" type="xml">
+              <form>
+                <sheet>
+                    <group name="group_top" col="2">
+                        <group name="group_left">
+                            <field name="name" />
+                            <field name="default_email" />
+                            <field name="current_user_email" />
+                        </group>
+                        <group name="group_right">
+                            <field name="service_list" widget="many2many_checkboxes"/>
+                        </group>
+                    </group>
+                     <button name="wiz_change_user_setting" string="Update user" type="object"  class="oe_read_only"/>
+                </sheet>
+              </form>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

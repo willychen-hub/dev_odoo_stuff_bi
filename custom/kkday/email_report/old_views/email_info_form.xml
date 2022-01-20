@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <!-- bug form view -->
+        <record model="ir.ui.view" id="email_report.email_info_form">
+            <field name="name">email Form</field>
+            <field name="model">er.show_email_setting</field>
+            <field name="arch" type="xml">
+              <form>
+                <sheet>
+                    <group name="group_top" col="2">
+                        <group name="group_left">
+                            <field name="name" />
+                            <field name="email" />
+                            <field name="subject" />
+                            <field name="content" />
+                        </group>
+                        <group name="group_right">
+                            <field name="file_name" />
+                            <field name="file_link" />
+                            <field name="sending_time" />
+                            <field name="frequency_type" />
+                            <field name="start_date" />
+                            <field name="end_date" />
+                            <field name="export_status_flag" />
+                        </group>
+                    </group>
+                </sheet>
+              </form>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

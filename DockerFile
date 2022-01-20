@@ -1,0 +1,10 @@
+FROM odoo:13.0
+
+# Running update
+RUN apt update
+RUN apt-get update
+
+RUN apt-get install -y gcc g++ python3-dev
+
+# Upgrade pip
+RUN pip3 install pandas, flask==0.12.5

@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="email_report.user_information_setting">
+            <field name="name">User_Setting</field>
+            <field name="res_model">bi.email.report.user.info.setting</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu item -->
+        <menuitem name="Email Report Function" id="email_report.menu_root" />
+
+        <!-- menu l item -->
+        <menuitem name="All Setting" id="email_report.menu_1" 
+                  parent="email_report.menu_root" />
+
+        <!-- menu 1-1 item -->
+        <menuitem name="User Setting" id="email_report.menu_1_list"
+                  parent="email_report.menu_1" 
+                  action="email_report.user_information_setting"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <!-- bug list view -->
+        <record model="ir.ui.view" id="email_report_setting">
+            <field name="name">Email Info list</field>
+            <field name="model">er.show_email_setting</field>
+            <field name="arch" type="xml">
+              <tree>
+                <field name="name" />
+                <field name="email" />
+                <field name="subject" />
+                <field name="content" />
+                <field name="file_name" />
+                <field name="file_link" />
+                <field name="sending_time" />
+                <field name="frequency_type" />
+                <field name="start_date" />
+                <field name="end_date" />
+                <field name="export_status_flag" />
+              </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

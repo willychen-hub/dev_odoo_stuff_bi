@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+
+        <!-- bug list view -->
+        <record model="ir.ui.view" id="email_report.test_page">
+            <field name="name">Test Abstract API</field>
+            <field name="model">er.test.model.with.table.insert.api.data</field>
+            <field name="arch" type="xml">
+              <tree>
+                <field name="id" />
+                <field name="var_1" />
+              </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

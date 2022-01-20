@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <!-- actions opening views on models -->
+        <!-- <record model="ir.actions.act_window" id="email_report.show_user_setting_list">
+            <field name="name">User_Setting</field>
+            <field name="res_model">er.show_user_setting</field>
+            <field name="view_mode">tree,form</field>
+        </record> -->
+
+        <!-- actions opening views on models -->
+        <!-- <record model="ir.actions.act_window" id="email_report.show_email_setting_list">
+            <field name="name">Email_Setting</field>
+            <field name="res_model">er.show_email_setting</field>
+            <field name="view_mode">tree,form</field>
+        </record> -->
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="email_report.test_page_2">
+            <field name="name">Test page showing</field>
+            <field name="res_model">er.test.model.with.table.insert.api.data</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu item -->
+        <menuitem name="Email Report Function" id="email_report.menu_root" />
+
+        <!-- menu l item -->
+        <menuitem name="All Setting" id="email_report.menu_1" 
+                  parent="email_report.menu_root" />
+
+        <!-- menu 1-1 item -->
+        <!-- <menuitem name="User Setting" id="email_report.menu_1_list"
+                  parent="email_report.menu_1" 
+                  action="email_report.show_user_setting_list" /> -->
+
+        <!-- menu 1-2 item -->
+        <!-- <menuitem name="Email Setting" id="email_report.menu_2_list"
+                  parent="email_report.menu_1" 
+                  action="email_report.show_email_setting_list" />  -->
+    </data>
+</odoo>

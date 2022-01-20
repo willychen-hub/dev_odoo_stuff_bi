@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+
+        <!-- bug list view -->
+        <record model="ir.ui.view" id="email_report.show_user_info_list">
+            <field name="name">User Info list</field>
+            <field name="model">er.show_user_setting</field>
+            <field name="arch" type="xml">
+              <tree>
+                <field name="name" />
+                <field name="default_email" />
+                <field name="service_list"/>
+                <field name="current_user_email" />
+              </tree>
+            </field>
+        </record>
+        
+    </data>
+</odoo>
