@@ -4,13 +4,12 @@
         <!-- bug list view -->
         <record model="ir.ui.view" id="email_report.user_information_setting">
             <field name="name">User Info list</field>
-            <field name="model">bi.email.report.user.info.setting</field>
+            <field name="model">bi.email.report.receiver.info.setting</field>
             <field name="arch" type="xml">
               <tree>
                 <field name="name" />
               </tree>
             </field>
         </record>
-        
     </data>
 </odoo>

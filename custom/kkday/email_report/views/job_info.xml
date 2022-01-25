@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+
+        <!-- bug list view -->
+        <record model="ir.ui.view" id="email_report.job_information_setting">
+            <field name="name">Job Info list</field>
+            <field name="model">bi.email.report.job.info.setting</field>
+            <field name="arch" type="xml">
+              <tree>
+                <field name="reciever_name" />
+                <field name="reciever_email" />
+                <field name="email_subject" />
+                <field name="service_project" />
+                <field name="sending_frequency" />
+                <field name="start_date" />
+                <field name="end_date" />
+                <field name="export_flag" />
+              </tree>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

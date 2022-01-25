@@ -1,12 +1,11 @@
 <odoo>
     <data>
-
         <!-- bug list view -->
-        <record model="ir.ui.view" id="email_report.user_information_setting">
+        <record model="ir.ui.view" id="email_report.receiver_information_setting">
             <field name="name">User Info list</field>
-            <field name="model">bi.email.report.user.info.setting</field>
+            <field name="model">bi.email.report.receiver.info.setting</field>
             <field name="arch" type="xml">
-              <form import="false">
+              <form>
                 <sheet>
                     <group name="group_top" col="2">
                         <group name="group_left">
@@ -17,6 +16,5 @@
               </form>
             </field>
         </record>
-        
     </data>
 </odoo>
