@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <!-- bug list view -->
+        <record model="ir.ui.view" id="email_report.receiver_information_setting">
+            <field name="name">Job Info list</field>
+            <field name="model">bi.email.report.job.info.setting</field>
+            <field name="arch" type="xml">
+              <form>
+                <sheet>
+                    <group name="group_top" col="2">
+                        <group name="group_left">
+                          <field name="reciever_name" string="Reciever Name"/>
+                          <field name="reciever_email" string="Reciever Email"/>
+                          <field name="email_subject" string="Email Subject"/>
+                          <field name="email_content" string="Email Content"/>
+                          <field name="service_project" string="Service Project"/>
+                          </group>
+                        <group name="group_right" col="2">
+                          <field name="sending_frequency" string="Sending Frequency"/>
+                          <field name="sending_time" string="Sending Time"/>
+                          <field name="start_date" string="Start Date"/>
+                          <field name="end_date" string="End Date"/>
+                          <field name="export_flag" string="Export Flag"/>
+                        </group>
+                    </group>
+                </sheet>
+              </form>
+            </field>
+        </record>
+    </data>
+</odoo>

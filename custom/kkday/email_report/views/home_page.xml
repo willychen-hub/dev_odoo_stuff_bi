@@ -1,11 +1,11 @@
 <odoo>
     <data>
         <!-- actions opening views on models -->
-        <!-- <record model="ir.actions.act_window" id="email_report.job_information_setting">
+        <record model="ir.actions.act_window" id="email_report.job_info_setting">
             <field name="name">Job_Setting</field>
             <field name="res_model">bi.email.report.job.info.setting</field>
             <field name="view_mode">tree,form</field>
-        </record> -->
+        </record>
 
         <!-- actions opening views on models -->
         <record model="ir.actions.act_window" id="email_report.receiver_info_setting">
@@ -22,9 +22,9 @@
                   parent="email_report.menu_root" />
 
         <!-- menu 1-1 item -->
-        <!-- <menuitem name="Job Setting" id="email_report.menu_1_list"
+        <menuitem name="Job Setting" id="email_report.menu_1_list"
                   parent="email_report.menu_1" 
-                  action="email_report.job_information_setting"/> -->
+                  action="email_report.job_info_setting"/>
 
         <!-- menu 1-2 item -->
         <menuitem name="User Setting" id="email_report.menu_2_list"

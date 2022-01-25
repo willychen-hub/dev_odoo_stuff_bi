@@ -7,14 +7,15 @@
             <field name="model">bi.email.report.job.info.setting</field>
             <field name="arch" type="xml">
               <tree>
-                <field name="reciever_name" />
-                <field name="reciever_email" />
-                <field name="email_subject" />
-                <field name="service_project" />
-                <field name="sending_frequency" />
-                <field name="start_date" />
-                <field name="end_date" />
-                <field name="export_flag" />
+                <field name="reciever_name" string="Reciever Name"/> 
+                <field name="reciever_email" string="Reciever Email"/> 
+                <field name="email_subject" string="Email Subject"/> 
+                <field name="service_project" string="Service Project"/> 
+                <field name="sending_frequency" string="Sending Frequency"/>
+                <field name="sending_time" string="Sending Time"/>
+                <field name="start_date" string="Start Date"/>
+                <field name="end_date" string="End Date"/>
+                <field name="export_flag" string="Export Flag"/>
               </tree>
             </field>
         </record>

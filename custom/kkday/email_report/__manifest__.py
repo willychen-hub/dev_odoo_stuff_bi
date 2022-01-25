@@ -26,6 +26,8 @@
         # "wizard/user_update.xml",
         "views/user_info.xml",
         "views/user_info_form.xml",
+        "views/job_info.xml",
+        "views/job_info_form.xml",
         "views/home_page.xml",
     ],
     # only loaded in demonstration mode

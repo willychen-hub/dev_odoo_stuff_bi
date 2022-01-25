@@ -16,9 +16,9 @@ def get_receiver_info():
     raw_sql = """
               select oid, name from _ods_test.export_email_main
               """
-    a = test_cur.query(raw_sql)
+    query_result = test_cur.query(raw_sql)
     test_cur.close()
-    return json.dumps(a)
+    return json.dumps(query_result)
 
 
 @app.route("/update_record", methods=["POST"])
@@ -101,5 +101,21 @@ def create_records():
         print(format_error_traceback(e))
         return {}
 
+@app.route("/get_job_info", methods=["GET"])
+def get_job_info():
+    test_cur = PGSqlTool("prod", "db_dw_reader")
+    raw_sql = """
+              select a.oid as dw_job_oid, main_oid as dw_receiver_oid, b.name as reciever_name,
+              email as reciever_email, email_subject, email_content, 
+              attachment_source as service_project, attachment_location, 
+              attachment_setting, sending_time, freq_type as sending_frequency, freq_json, 
+              to_char(start_send_dt_tw, 'YYYY-MM-DD') as start_date, to_char(end_send_dt_tw, 'YYYY-MM-DD') as end_date, 
+              export_flag, a.create_user as creator_email, a.modify_user as modifier_email
+              from _ods_test.export_email_setting a
+			  join _ods_test.export_email_main b on a.main_oid = b.oid 
+              """
+    query_result = test_cur.query(raw_sql)
+    test_cur.close()
+    return json.dumps(query_result)
 
 app.run()
