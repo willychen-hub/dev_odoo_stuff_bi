@@ -1,7 +1,7 @@
 <odoo>
     <data>
         <!-- bug list view -->
-        <record model="ir.ui.view" id="email_report.receiver_information_setting">
+        <record model="ir.ui.view" id="email_report.job_information_form_setting">
             <field name="name">Job Info list</field>
             <field name="model">bi.email.report.job.info.setting</field>
             <field name="arch" type="xml">
@@ -9,17 +9,34 @@
                 <sheet>
                     <group name="group_top" col="2">
                         <group name="group_left">
-                          <field name="reciever_name" string="Reciever Name"/>
-                          <field name="reciever_email" string="Reciever Email"/>
+                          <field name="reciever_name" string="Reciever Name" attrs="{'readonly': [('id', '!=', False)]}"/>
+                          <field name="reciever_email" string="Reciever Email" placeholder="abc@kkday.com,def@kkday.com"/>
                           <field name="email_subject" string="Email Subject"/>
                           <field name="email_content" string="Email Content"/>
                           <field name="service_project" string="Service Project"/>
+
+                          <!-- Tableau Type -->
+                          <field name="file_type" string="File Type" attrs="{'invisible': [('service_project', 'in', ('s3','0'))]}"/>
+                          <!-- Tableau Image -->
+                          <field name="width" string="Width" attrs="{'invisible': ['|', ('file_type', 'in', ('pdf','fullpdf', '0')), ('service_project', 'in', ('s3', '0'))]}"/>
+                          <field name="height" string="Height" attrs="{'invisible': ['|', ('file_type', 'in', ('pdf', 'fullpdf', '0')), ('service_project', 'in', ('s3', '0'))]}"/>
+                          <!-- Tableau PDF or FULL PDF -->
+                          <field name="page_layout" string="Page Layout" attrs="{'invisible': ['|', ('file_type', 'in', ('img', '0')),  ('service_project', 'in', ('s3', '0'))]}"/>
+                          <field name="page_size" string="Page Size" attrs="{'invisible': ['|', ('file_type', 'in', ('img', '0')), ('service_project', 'in', ('s3', '0'))]}"/>
+                          <!-- Tableau Path -->
+                          <field name="workbook_link" string="Workbook link Path" attrs="{'invisible': [('service_project', 'in', ('s3','0'))]}"/>
+
+                          <!-- S3 Path -->
+                          <field name="file_s3_location" string="S3 File Path" attrs="{'invisible': [('service_project', 'in', ('tableau','0'))]}"/>
+
                           </group>
                         <group name="group_right" col="2">
-                          <field name="sending_frequency" string="Sending Frequency"/>
-                          <field name="sending_time" string="Sending Time"/>
-                          <field name="start_date" string="Start Date"/>
-                          <field name="end_date" string="End Date"/>
+                          <field name="file_name" string="File Name"/>
+                          <field name="frequency_type" string="Frequency Type"/>
+                          <field name="sending_frequency" string="Sending Frequency" attrs="{'readonly': [('frequency_type','=','daily')]}" placeholder="Seperate the number by comma"/>
+                          <field name="sending_time" string="Sending Time" />
+                          <field name="start_date" string="Start Date" options="{'datepicker':{'minDate': 'now'}}"/>
+                          <field name="end_date" string="End Date" options="{'datepicker':{'minDate': 'now'}}"/>
                           <field name="export_flag" string="Export Flag"/>
                         </group>
                     </group>

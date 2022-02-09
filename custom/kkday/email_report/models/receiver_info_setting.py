@@ -6,6 +6,7 @@ from datetime import datetime
 import pandas as pd
 import requests
 from odoo import api, fields, models
+from odoo.exceptions import UserError
 
 
 # This is to create a the column for later usage.
@@ -29,15 +30,23 @@ class ReceiverInfoSetting(models.Model):
             "Content-Type": "application/json",
         }
 
-        logging.info(vals_dict)
-
         # Check if the data already inside of DW table.
         if "dw_oid" not in vals_dict.keys():
+
+            exists = self.env["bi.email.report.receiver.info.setting"].search(
+                [
+                    ("name", "=", vals_dict['name']),
+                ]
+            )
+            if exists:
+                raise UserError(
+                    'Vendor "' + vals_dict['name'] + '" is already in Odoo!'
+                )
             vals_dict["login_user_email"] = self.env.user.email
             vals_dict["insert_time"] = str(datetime.now())
             data_dict = json.dumps(vals_dict)
             response = requests.post(
-                "http://127.0.0.1:5000/create_records",
+                "http://127.0.0.1:5000/create_receiver_records",
                 headers=headers,
                 data=data_dict,
             )
@@ -57,14 +66,12 @@ class ReceiverInfoSetting(models.Model):
         headers = {
             "Content-Type": "application/json",
         }
-        logging.info(self.dw_oid)
         vals_dict["dw_oid"] = self.dw_oid
         vals_dict["update_time"] = str(datetime.now())
         vals_dict["login_user_email"] = self.env.user.email
         data_dict = json.dumps(vals_dict)
-        logging.info(vals_dict)
         response = requests.post(
-            "http://127.0.0.1:5000/update_record",
+            "http://127.0.0.1:5000/update_receiver_record",
             headers=headers,
             data=data_dict,
         )

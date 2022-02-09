@@ -3,7 +3,7 @@
 
         <!-- bug list view -->
         <record model="ir.ui.view" id="email_report.job_information_setting">
-            <field name="name">Job Info list</field>
+            <field name="name">Job Info</field>
             <field name="model">bi.email.report.job.info.setting</field>
             <field name="arch" type="xml">
               <tree>
@@ -11,6 +11,7 @@
                 <field name="reciever_email" string="Reciever Email"/> 
                 <field name="email_subject" string="Email Subject"/> 
                 <field name="service_project" string="Service Project"/> 
+                <field name="frequency_type" string="Freq type"/>
                 <field name="sending_frequency" string="Sending Frequency"/>
                 <field name="sending_time" string="Sending Time"/>
                 <field name="start_date" string="Start Date"/>
